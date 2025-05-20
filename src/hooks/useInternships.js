@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchSampleData } from '../utils/api';
+import { fetchDataFromApi } from '../utils/api';
 
 export default function useInternships() {
     const [internships, setInternships] = useState([]);
@@ -15,7 +15,7 @@ export default function useInternships() {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const data = await fetchSampleData();
+                const data = await fetchDataFromApi();
                 const internshipsData = data.internship_ids.map(id => data.internships_meta[id]).filter(Boolean);
 
                 setInternships(internshipsData);
