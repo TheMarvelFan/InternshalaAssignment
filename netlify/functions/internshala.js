@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 export const handler = async function(event, context) {
     try {
         const response = await fetch("https://internshala.com/hiring/search");
