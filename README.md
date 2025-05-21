@@ -66,6 +66,8 @@ internshala-assignment/
 
 ### Installation
 
+#### Development Environment
+
 1. Clone the repository
 
 2. Install dependencies of the React application:
@@ -96,10 +98,56 @@ internshala-assignment/
 
 4. Open your browser and navigate to `http://localhost:5173` (or your default Vite port) to view the application.
 
-## API
-
 The application connects to a local API running on port 5000:
 - Endpoint: `http://localhost:5000/api/internshala`
+
+#### Production Environment
+
+1. Clone the repository.
+
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Run the netlify dev command to start a production-like environment:
+    ```bash
+    npm run netlify-dev
+    ```
+   
+4. Open your browser and navigate to `http://localhost:8888` (or your default Netlify port) to view the application.
+
+> The production build uses Netlify Dev to simulate a production environment. Ensure you have the Netlify CLI installed globally:
+    <br>```
+       npm install -g netlify-cli
+    ```<br><br>
+> You can also run the application in development mode using netlify. To do this:
+> 1. Create a .env file in the root folder with the following content:
+    <br>```
+       VITE_DEV=true
+    ```<br>
+> 2. Run the following commands to start the express server:
+    <br>```
+       cd ./src/server
+    ```
+    <br>```
+         npm install
+    ```
+     <br>```
+         npm start
+    ```<br>
+> 3. In a separate terminal, run the following command from the root directory to start netlify dev:
+    <br>```
+       npm run netlify-dev
+    ```<br>
+> 4. To switch between dev and prod mode, you can set and unset the VITE_DEV variable in the .env file.<br>Leave it blank like so to run in production mode:
+    <br>```
+       VITE_DEV=
+    ```<br>
+    Set it to true (or any other value) to run in development mode:
+    <br>```
+       VITE_DEV=true
+    ```<br>
 
 ## Usage
 
