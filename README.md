@@ -142,10 +142,10 @@ The application connects to a local API running on port 5000:
        cd ./src/server
     ```
     <br>```
-         npm install
+       npm install
     ```
      <br>```
-         npm start
+       npm start
     ```<br>
 > 3. In a separate terminal, run the following command from the root directory to start netlify dev:
     <br>```
