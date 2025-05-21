@@ -10,12 +10,11 @@ This project creates a user-friendly dashboard to browse internship listings wit
 
 - View a list of internships with detailed information
 - Filter internships by:
-    - Profile/role
-    - Location
-    - Duration
+    - Profile/roles
+    - Locations
+    - Durations
 - Search functionality
     - Search by profile name, location, or company name
-- Toggle filter visibility
 - Premium internship identification
 - Responsive layout
 
@@ -162,11 +161,13 @@ The application connects to a local API running on port 5000:
 
 ## Usage
 
-1. Browse the list of available internships
-2. Click the filter button to show/hide filtering options
-3. Select filters to narrow down the internship listings
-4. Use the clear filters button to reset all filters
-5. Use the search bar to find internships by profile name, location, or company name
+1. Browse the list of available internships.
+2. Select filters to apply from a dropdown list:
+   - Profile: Choose from a list of roles
+   - Location: Choose from a list of locations
+   - Duration: Choose from a list of durations
+3. Use the clear filters button to reset all filters.
+4. Use the search bar to find internships by profile name, location, or company name.
 
 ## Technologies
 
