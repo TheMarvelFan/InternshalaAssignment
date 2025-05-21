@@ -2,7 +2,7 @@ import { MapPin, Clock, Briefcase, Calendar } from 'lucide-react';
 
 export default function InternshipCard({ internship, isPremium }) {
     return (
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-4 hover:shadow-md transition-shadow duration-200 relative">
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-4 hover:shadow-lg hover:translate-y-[-4px] hover:border-blue-300 border border-transparent transition-all duration-200 ease-in-out relative">
             {isPremium && (
                 <div className="absolute top-0 right-0 bg-yellow-400 text-yellow-800 text-xs font-medium px-2 py-1 rounded-bl-md">
                     Premium
@@ -70,7 +70,7 @@ export default function InternshipCard({ internship, isPremium }) {
                 </div>
                 <button className={`${
                     internship.eligible_for_easy_apply ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-600 hover:bg-blue-700'
-                } text-white px-4 py-2 rounded-md`}>
+                } text-white px-4 py-2 rounded-md transition-colors duration-200`}>
                     {internship.eligible_for_easy_apply ? 'Easy Apply' : 'Apply Now'}
                 </button>
             </div>
