@@ -71,8 +71,12 @@ internshala-assignment/
 
 #### Development Environment
 
-1. Clone the repository
-
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/TheMarvelFan/InternshalaAssignment
+    cd InternshalaAssignment
+    ```
+   
 2. Install dependencies of the React application:
     ```bash
     npm install
@@ -106,7 +110,11 @@ The application connects to a local API running on port 5000:
 
 #### Production Environment
 
-1. Clone the repository.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/TheMarvelFan/InternshalaAssignment
+    cd InternshalaAssignment
+    ```
 
 2. Install dependencies:
     ```bash
