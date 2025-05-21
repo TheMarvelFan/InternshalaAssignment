@@ -53,6 +53,19 @@ export default function HomePage() {
                         ) : (
                             <>
                                 <p className="mb-4 text-gray-600">{filteredInternships.length} internships found</p>
+                                {Object.values(filters).some(arr => arr.length > 0) && (
+                                    <div className="mb-4">
+                                        <div className="flex items-center">
+                                            <span className="text-sm text-gray-500 mr-2">Active filters:</span>
+                                            <button
+                                                className="text-sm text-blue-600 hover:underline"
+                                                onClick={clearFilters}
+                                            >
+                                                Clear all
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
                                 {filteredInternships.map(internship => (
                                     <InternshipCard key={internship.id} internship={internship} isPremium={isPremium(internship)} />
                                 ))}

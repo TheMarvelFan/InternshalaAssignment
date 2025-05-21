@@ -6,7 +6,11 @@ export default function useInternships() {
     const [filteredInternships, setFilteredInternships] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [filters, setFilters] = useState({ profile: '', location: '', duration: '' });
+    const [filters, setFilters] = useState({
+        profile: [],
+        location: [],
+        duration: []
+    });
     const [filterOptions, setFilterOptions] = useState({ profiles: [], locations: [], durations: [] });
     const [searchQuery, setSearchQuery] = useState('');
     const [showFilters, setShowFilters] = useState(false);
@@ -42,9 +46,31 @@ export default function useInternships() {
         let filtered = internships;
 
         // Filters
-        if (filters.profile) filtered = filtered.filter(i => i.profile_name.toLowerCase() === filters.profile.toLowerCase());
-        if (filters.location) filtered = filtered.filter(i => i.location_names.some(l => l.toLowerCase() === filters.location.toLowerCase()));
-        if (filters.duration) filtered = filtered.filter(i => i.duration.toLowerCase() === filters.duration.toLowerCase());
+        if (filters.profile.length > 0) {
+            filtered = filtered.filter(i =>
+                filters.profile.some(p =>
+                    i.profile_name.toLowerCase() === p.toLowerCase()
+                )
+            );
+        }
+
+        if (filters.location.length > 0) {
+            filtered = filtered.filter(i =>
+                i.location_names.some(loc =>
+                    filters.location.some(l =>
+                        loc.toLowerCase() === l.toLowerCase()
+                    )
+                )
+            );
+        }
+
+        if (filters.duration.length > 0) {
+            filtered = filtered.filter(i =>
+                filters.duration.some(d =>
+                    i.duration.toLowerCase() === d.toLowerCase()
+                )
+            );
+        }
 
         // Search
         if (searchQuery.trim()) {
@@ -64,7 +90,7 @@ export default function useInternships() {
     };
 
     const clearFilters = () => {
-        setFilters({ profile: '', location: '', duration: '' });
+        setFilters({ profile: [], location: [], duration: [] });
         setSearchQuery('');
     };
 
