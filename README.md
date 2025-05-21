@@ -28,6 +28,9 @@ Here's a project structure in Markdown format that you can add to your README:
 
 ```
 internshala-assignment/
+├── netlify                         # Netlify configuration
+│   └── functions/                  # Netlify functions
+│       └── internshala.js          # Serverless netlify function for fetching internship data
 ├── public/                         # Public assets
 │   └── assets/                     # Static assets
 │       └── InternshalaLogo.png     # Logo image
